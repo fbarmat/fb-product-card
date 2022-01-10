@@ -1,0 +1,20 @@
+import { ProductCardHOCProps } from '../interfaces/interfaces';
+
+import { ProductCard as ProductCardHOC } from './ProductCard';
+import { ProductButtons } from './ProductButtons';
+import { ProductImage } from './ProductImage';
+import { ProductTitle } from './ProductTitle';
+
+export { ProductButtons } from './ProductButtons';
+export { ProductImage } from './ProductImage';
+export { ProductTitle } from './ProductTitle';
+
+
+//Esto lo hago para poder llamar a los componentes como ProductCard.<nombre del componente hijo>
+export const ProductCard: ProductCardHOCProps = Object.assign( ProductCardHOC, {
+    Title: ProductTitle,
+    Image: ProductImage,
+    Buttons: ProductButtons 
+});
+
+export default ProductCard;
